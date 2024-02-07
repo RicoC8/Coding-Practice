@@ -1,0 +1,44 @@
+CLASS Person
+    PUBLIC personName: STRING
+    PUBLIC personAge: INTEGER
+    PUBLIC PROCEDURE NEW(Name: STRING, Age: INTEGER)
+        personName <-- Name
+        personAge <-- Age
+    ENDPROCEDURE
+
+    PUBLIC PROCEDURE DisplayDetails()
+        OUTPUT "Person's Name is ", Name
+        OUTPUT "Person's Age is ", Age
+    ENDPROCEDURE
+ENDCLASS
+
+Jake <-- NEW Person("Jake", 18)
+
+CLASS Teacher INHERITS Person
+    PUBLIC Salary: REAL
+    PUBLIC PROCEDURE NEW(Name: STRING, Age: INTEGER, Salary: REAL)
+        SUPER.NEW(Name, Age)
+        TeacherSalary <-- Salary
+    ENDPROCEDURE
+
+    PUBLIC PROCEDURE ShowTDetails()
+        OUTPUT "Teacher's Name is ", Name
+        OUTPUT "Teacher's Age is ", Age
+        OUTPUT "Teacher's Salary is ", TeacherSalary
+    ENDPROCEDURE
+ENDCLASS
+
+CLASS Student INHERITS Person
+    PUBLIC Grade : INTEGER
+    PROCEDURE NEW(Name: STRING, Age: INTEGER, Grade: INTEGER)
+        SUPER.NEW(Name, Age)
+        Grade <-- Grade
+    ENDPROCEDURE
+
+    PROCEDURE DisplayDetails
+        SUPER.DisplayDetails()
+        OUTPUT "Student's Grade is: ", Grade
+    ENDPROCEDURE
+ENDCLASS
+
+Kit <-- Student("Kit", 15, 11)

@@ -1,0 +1,84 @@
+DECLARE SquareSide: REAL
+DECLARE RectBreadth: REAL
+DECLARE RectLength: REAL
+DECLARE TriBase: REAL
+DECLARE TriHeight: REAL
+DECLARE ParallelHeight: REAL
+DECLARE ParallelBase: REAL
+DECLARE Radius: REAL
+
+CONSTANT Pi = 3.14
+
+DECLARE AreaSquare: REAL
+DECLARE AreaRectangle: REAL
+DECLARE AreaTriangle: REAL
+DECLARE AreaParallel: REAL
+DECLARE AreaCircle: REAL
+
+SquareSide <-- 5
+AreaSquare <-- SquareSide * SquareSide
+
+RectBreadth <-- 5
+RectLength <-- 5
+AreaRectangle <-- RectBreadth * RectLength
+
+TriBase <-- 5
+TriHeight <-- 5
+AreaTriangle <-- 0.5 * TriBase * TriHeight
+
+ParallelBase <-- 5
+ParallelHeight <-- 5
+AreaParallel <-- ParallelBase * ParallelHeight
+
+Radius <-- 5
+AreaCircle <-- Pi * Radius * Radius
+
+OUTPUT AreaSquare
+OUTPUT AreaRectangle
+OUTPUT AreaTriangle
+OUTPUT AreaParallel
+OUTPUT AreaCircle
+
+
+// -----
+
+CONSTANT Pi = 3.14
+
+DECLARE AreaSquare: REAL
+DECLARE AreaRectangle: REAL
+DECLARE AreaTriangle: REAL
+DECLARE AreaParallel: REAL
+DECLARE AreaCircle: REAL
+
+PROCEDURE CalcAreaSquare(SquareSide: REAL)
+    AreaSquare <-- SquareSide * SquareSide
+    OUTPUT AreaSquare
+ENDPROCEDURE
+
+PROCEDURE CalcAreaRect(RectBreadth: REAL, RectLength: REAL)
+    AreaRectangle <-- RectBreadth * RectLength
+    OUTPUT AreaRectangle
+ENDPROCEDURE
+
+PROCEDURE CalcAreaTriangle(TriBase: REAL, TriHeight: REAL):
+    AreaTriangle <-- 0.5 * TriBase * TriHeight
+    OUTPUT AreaTriangle
+ENDPROCEDURE
+
+PROCEDURE CalcAreaParallel(ParallelBase: REAL, ParallelHeight: REAL)
+    AreaParallel <-- ParallelBase * ParallelHeight
+    OUTPUT AreaParallel
+ENDPROCEDURE
+
+PROCEDURE CalcAreaCircle(Radius: REAL)
+    AreaCircle <-- Pi * Radius * Radius
+    OUTPUT AreaCircle
+ENDPROCEDURE
+
+CALL CalcAreaSquare(5)
+CALL CalcAreaRect(5, 5)
+CALL CalcAreaTriangle(5, 5)
+CALL CalcAreaParallel(5, 5)
+CALL CalcAreaCircle(5)
+
+

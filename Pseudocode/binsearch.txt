@@ -1,0 +1,40 @@
+def binSearch(searchElement, list):
+    high = len(list) - 1
+    low = 0
+
+    while high >= low:
+        mid = (high + low) // 2
+ 
+        if list[mid] == searchElement:
+            return mid
+        else:
+            if list[mid] > searchElement:
+                high = mid - 1
+            else:
+                low = mid + 1
+
+myList = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+print(binSearch(5,myList))
+
+DECLARE myList: ARRAY[0:9] OF INTEGER
+DECLARE high, low, mid: INTEGER
+DECLARE found: BOOLEAN
+
+high <- 9
+low <- 0
+found <- FALSE
+
+WHILE high >= low AND found = FALSE
+    mid = (high + low) DIV 2
+    IF myList[mid] = searchElement THEN
+        found <- TRUE
+    ELSE 
+        IF searchElement > myList[mid] THEN
+            low <- mid + 1
+        ELSE
+            high <- mid - 1
+        ENDIF
+    ENDIF
+ENDWHILE
+
+OUTPUT mid

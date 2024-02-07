@@ -1,0 +1,38 @@
+CLASS Student
+    PRIVATE StudentName: STRING
+    PRIVATE StudentClass: STRING
+    PRIVATE StudentAge: INTEGER
+    PRIVATE StudentHouse: STRING
+
+    PROCEDURE NEW()
+    ENDPROCEDURE
+ENDCLASS
+
+firstStudent <-- NEW Student()
+firstStudent.StudentName <-- "Lil Nas X"
+firstStudent.StudentClass <-- "11B"
+firstStudent.StudentAge <-- 21
+firstStudent.StudentHouse <-- "Green"
+
+CLASS Student
+    PRIVATE StudentName: STRING
+    PRIVATE StudentClass: STRING
+    PRIVATE StudentAge: INTEGER
+    PRIVATE StudentHouse: STRING
+
+    PROCEDURE NEW(Name, Class, Age, House)
+        StudentName <-- Name
+        StudentClass <-- Class
+        StudentAge <-- Age
+        StudentHouse <-- House
+    ENDPROCEDURE
+
+    PROCEDURE studentDetails()
+        OUTPUT "Student's Name is ", StudentName
+        OUTPUT "Student's Class is ", StudentClass
+        OUTPUT "Student's Age is ", StudentAge
+        OUTPUT "Student's House is ", StudentHouse
+    ENDPROCEDURE
+ENDCLASS
+
+firstStudent <-- NEW Student('Lee', 'Sec 4', 21, 'Green')
