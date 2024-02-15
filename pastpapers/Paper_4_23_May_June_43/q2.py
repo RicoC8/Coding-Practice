@@ -34,4 +34,6 @@ class Vehicle:
         self.__CurrentSpeed = self.__CurrentSpeed + self.__IncreaseAmount
         if self.__CurrentSpeed > self.__MaxSpeed:
             self.__CurrentSpeed = self.__MaxSpeed
-        self.__HorizontalPosition = self.__HorizontalPosition + self.__CurrentSpeed 
+        self.__HorizontalPosition = self.__HorizontalPosition + self.__CurrentSpeed
+class Helicopter(Vehicle):
+    
