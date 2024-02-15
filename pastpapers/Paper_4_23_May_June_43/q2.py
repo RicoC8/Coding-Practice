@@ -36,4 +36,15 @@ class Vehicle:
             self.__CurrentSpeed = self.__MaxSpeed
         self.__HorizontalPosition = self.__HorizontalPosition + self.__CurrentSpeed
 class Helicopter(Vehicle):
+    #VerticalPosition string
+    #VerticalChange integer
+    #MaxHeight integer
+
+    def __init__(self, ID, MaxSpeed, IncreaseAmount, VerticalPosition, VerticalChange, MaxHeight):
+        super().__init__(ID, MaxSpeed, IncreaseAmount)
+        self.__vpos = VerticalPosition
+        self.__vchange = VerticalChange
+        self.__hmax = MaxHeight
     
+    def IncreaseSpeed(self):
+        return super().IncreaseSpeed()
